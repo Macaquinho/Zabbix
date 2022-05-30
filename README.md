@@ -69,13 +69,7 @@ Aparecera algo asi
 ```bash
 	quit
 ```
-
-Aparecera algo asi
-
-![7](./imagenes/7.png)
-
-
-8º
+8º Metemos el codigo para aplicar las base de datos
 
 ```bash
 	sudo zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
@@ -83,7 +77,9 @@ Aparecera algo asi
 
 Aparecera algo asi
 
-![8](./imagenes/8.png)
+![7](./imagenes/7.png)
+
+
 
 9º Editamos el archivo /etc/zabbix/zabbix_server.conf y modificamos las siguientes propiedades
 
@@ -92,8 +88,15 @@ Aparecera algo asi
 	DBPassword=password
 ```
 
-10º
+Aparecera algo asi
 
+![8](./imagenes/8.png)
+
+10º  Editamos el fichero /etc/zabbix/apache.conf para especificar nuestra zona horaria:
+
+``` bash
+sudo nano /etc/zabbix/apache.conf
+```
 ```ini-- 
 	<IfModule mod_php5.c>
     php_value max_execution_time 300
@@ -116,6 +119,7 @@ Aparecera algo asi
     php_value date.timezone Europe/London			<--- Añadimos esta línea(Aparecera como comentario)
 </IfModule>
 ```
+Y nos debe de quedar algo asi 
 
 ![9](./imagenes/9.png)
 
